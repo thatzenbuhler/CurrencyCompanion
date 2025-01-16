@@ -2,6 +2,8 @@
 
 This is a simple currency converter app built with React and TypeScript. It allows you to convert between different currencies using the latest exchange rates from the [ExchangeRate-API](https://www.exchangerate-api.com/).
 
+[Site URL](https://thatzenbuhler.github.io/CurrencyCompanion/)
+
 ## Features
 
 -   Convert between multiple currencies
