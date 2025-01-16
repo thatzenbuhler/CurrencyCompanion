@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/CurrencyCompanion/static/css/main.e6c13ad2.css",
+    "main.js": "/CurrencyCompanion/static/js/main.4473d0b1.js",
+    "index.html": "/CurrencyCompanion/index.html",
+    "main.e6c13ad2.css.map": "/CurrencyCompanion/static/css/main.e6c13ad2.css.map",
+    "main.4473d0b1.js.map": "/CurrencyCompanion/static/js/main.4473d0b1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.4473d0b1.js"
+  ]
+}
