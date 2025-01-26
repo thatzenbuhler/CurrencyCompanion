@@ -19,7 +19,7 @@ const CURRENCY_CODES_TARGET = ['JPY', 'USD', 'EUR', 'GBP'];
 function App(): JSX.Element {
     const [baseCurrency, setBaseCurrency] = useState<string>('JPY');
     const [targetCurrency, setTargetCurrency] = useState<string>('USD');
-    const [amount, setAmount] = useState<number>(1);
+    const [amount, setAmount] = useState<string>('1');
     const [convertedAmount, setConvertedAmount] = useState<number>(0);
     const [rates, setRates] = useState<{ [key: string]: number }>({});
     const [error, setError] = useState<string | null>(null);
@@ -32,7 +32,7 @@ function App(): JSX.Element {
     // Recalculate whenever targetCurrency, amount, or rates changes
     useEffect(() => {
         if (targetCurrency in rates) {
-            setConvertedAmount(amount * rates[targetCurrency]);
+            setConvertedAmount(Number(amount) * rates[targetCurrency]);
         }
     }, [amount, targetCurrency, rates]);
 
@@ -130,7 +130,12 @@ function App(): JSX.Element {
                 label={`Amount in ${baseCurrency}`}
                 type="number"
                 value={amount}
-                onChange={(e) => setAmount(Number(e.target.value))}
+                onChange={(e) => {
+                    const value = e.target.value;
+                    if (/^\d*\.?\d*$/.test(value) || value === '') {
+                        setAmount(value);
+                    }
+                }}
                 variant="outlined"
                 sx={{ mb: 2 }}
             />
