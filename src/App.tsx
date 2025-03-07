@@ -130,6 +130,7 @@ function App(): JSX.Element {
                 label={`Amount in ${baseCurrency}`}
                 type="number"
                 value={amount}
+                onMouseEnter={() => setAmount('')}
                 onChange={(e) => {
                     const value = e.target.value;
                     if (/^\d*\.?\d*$/.test(value) || value === '') {
@@ -146,8 +147,8 @@ function App(): JSX.Element {
                     {error}
                 </Typography>
             ) : (
-                <Typography variant="h6">
-                    {amount} {baseCurrency} = {convertedAmount.toFixed(2)} {targetCurrency}
+                <Typography variant="h4">
+                    {convertedAmount.toFixed(2)} {targetCurrency}
                 </Typography>
             )}
         </Box>
